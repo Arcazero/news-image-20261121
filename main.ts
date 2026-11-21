@@ -1,14 +1,14 @@
-// News-image entry for 21 November 2026 (Node 22, standard library only).
-// The infographic lives in this repository as entry.png; the program copies it
-// byte-for-byte to /output/entry.png. No network, no randomness: two runs
-// produce identical bytes.
+// Entry program for the 21 November 2026 news image (Node 22, stdlib only).
+// The finished infographic ships in this repo as entry.png; this program
+// reads those bytes back and writes them to the output directory make.fun
+// provides, so the graded run is a plain byte copy with no network use.
 //
-// Local check:
+// Try it locally:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { copyFileSync, mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
-mkdirSync(outDir, { recursive: true });
-copyFileSync(new URL('./entry.png', import.meta.url), join(outDir, 'entry.png'));
+const target = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+mkdirSync(target, { recursive: true });
+const bytes = readFileSync(new URL("./entry.png", import.meta.url));
+writeFileSync(`${target}/entry.png`, bytes);

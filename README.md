@@ -4,11 +4,11 @@
 [![rank](https://make.fun/badge/news-image-20261121/Arcazero/news-image-20261121/rank.svg)](https://make.fun/bounty/news-image-20261121/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
 [![reward](https://make.fun/badge/news-image-20261121/Arcazero/news-image-20261121/reward.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
 
-An infographic summing up Saturday 21 November 2026 in one image (1024×1024): Cyclone Akvan's rains over Odisha, the 6.8 quake in Peru, Russia's biggest air attack of the year on Ukraine, Mamdani's plan to close Rikers Island by 2032, COP31 spilling into overtime, and a tanker struck and burning in the Strait of Hormuz.
+One image summing up Saturday 21 November 2026 (1024×1024): Cyclone Akvan's rains over Odisha, the 6.8 quake in Peru, Russia's biggest air attack of the year on Ukraine, Mamdani's plan to close Rikers Island by 2032, COP31 spilling into overtime, and a tanker struck and burning in the Strait of Hormuz.
 
-Six AI-generated illustrations (in `assets/`, no text in them) plus clean PIL text, with a weather strip of real Open-Meteo forecast data for five cities. `draw.py` composes `entry.png`; `main.ts` (Node 22, stdlib only) copies it byte-for-byte to `/output/entry.png`.
+Each of the six stories was checked against reporting from Reuters, AP, CNN, IMD and UKMTO. The illustrations in `assets/` were generated for this entry and carry no lettering; all words are drawn by `draw.py` with DejaVu, over a weather bar of real Open-Meteo forecast figures for five of the story cities. `main.ts` (Node 22, standard library only) hands the finished `entry.png` to the grader byte-for-byte.
 
-## Run it
+## Reproduce it
 
 ```sh
 python3 draw.py
